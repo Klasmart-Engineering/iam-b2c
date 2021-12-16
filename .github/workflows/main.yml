@@ -1,0 +1,20 @@
+# Push baseline IEF to B2C
+
+name: IEF_to_B2C
+
+on: push
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: 'Upload TrustFrameworkBase Policy'
+      uses: azure-ad-b2c/deploy-trustframework-policy@v3
+      with:
+        folder: "./Policies"
+        files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml"
+        tenant: ${{ secrets.KL_POC_TENANTID }}
+        clientId: ${{ secrets.KL_POC_CLIENTID }}
+        clientSecret: ${{ secrets.KL_POC_SECRET }}
