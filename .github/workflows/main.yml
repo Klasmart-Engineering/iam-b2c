@@ -15,6 +15,6 @@ jobs:
       with:
         folder: "./Policies"
         files: "TrustFrameworkBase.xml,TrustFrameworkLocalization.xml,TrustFrameworkExtensions.xml,SignUpOrSignin.xml"
-        tenant: ${{ secrets.KL_POC_TENANTID }}
-        clientId: ${{ secrets.KL_POC_CLIENTID }}
-        clientSecret: ${{ secrets.KL_POC_SECRET }}
+        tenant: ${{ secrets.KLUK_LOADTEST_TENANTID }}
+        clientId: ${{ secrets.KLUK_LOADTEST_CLIENTID }}
+        clientSecret: ${{ secrets.KLUK_LOADTEST_SECRET }}
