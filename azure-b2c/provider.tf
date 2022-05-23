@@ -1,3 +1,8 @@
+variable "tenant_id" {
+  type    = string
+  default = ""
+}
+
 terraform {
   backend "local" {
     path = "/Users/jameswilson/terraform_shared_state/alpha-artefacts/terraform.tfstate"
@@ -26,9 +31,9 @@ terraform {
 provider "azurerm" {
   features {}
   # skip_provider_registration = true
-  tenant_id = "04007419-cfff-4787-8ed9-a03e0887d337"
+  tenant_id = var.tenant_id
 }
 
 provider "azuread" {
-  tenant_id = "04007419-cfff-4787-8ed9-a03e0887d337"
+  tenant_id = var.tenant_id
 }
